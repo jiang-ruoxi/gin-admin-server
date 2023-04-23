@@ -1,0 +1,41 @@
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 10:59:36.697	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:00:21.262	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:02:38.567	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:12:24.284	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:13:33.920	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:16:13.240	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:19:17.691	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:21:46.791	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:22:32.848	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:23:16.583	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:24:03.210	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:24:37.786	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 11:25:19.928	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:17:37.252	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:27:37.414	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:32:04.995	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:32:48.468	[31merror[0m	/Users/jiang/go/src/admin/server/api/v1/sbaike/baike.go:184	获取失败!	{"error": "Error 1146: Table 'base.s_category' doesn't exist"}
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:37:17.570	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:38:00.200	[31merror[0m	/Users/jiang/go/src/admin/server/api/v1/scategory/category.go:124	更新失败!	{"error": "WHERE conditions required"}
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:38:10.557	[31merror[0m	/Users/jiang/go/src/admin/server/api/v1/scategory/category.go:124	更新失败!	{"error": "WHERE conditions required"}
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:38:41.190	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:39:06.272	[31merror[0m	/Users/jiang/go/src/admin/server/api/v1/scategory/category.go:124	更新失败!	{"error": "WHERE conditions required"}
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:44:49.086	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:45:01.337	[31merror[0m	/Users/jiang/go/src/admin/server/api/v1/scategory/category.go:124	更新失败!	{"error": "WHERE conditions required"}
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:48:24.487	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:48:35.718	[31merror[0m	/Users/jiang/go/src/admin/server/api/v1/scategory/category.go:148	查询失败!	{"error": "record not found"}
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:48:37.765	[31merror[0m	/Users/jiang/go/src/admin/server/api/v1/scategory/category.go:148	查询失败!	{"error": "record not found"}
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:49:26.263	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:54:47.467	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:56:28.855	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 14:58:02.414	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 15:01:38.280	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 15:05:53.513	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 15:09:49.073	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 15:59:36.456	[31merror[0m	/Users/jiang/go/src/admin/server/api/v1/sbaike/baike.go:136	更新失败!	{"error": "WHERE conditions required"}
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 16:01:37.924	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 16:33:16.663	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 19:37:35.821	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 22:35:21.219	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 22:36:09.366	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2023/04/02 - 23:59:36.216	[31merror[0m	/Users/jiang/go/src/admin/server/core/server.go:41	accept tcp [::]:8888: use of closed network connection
