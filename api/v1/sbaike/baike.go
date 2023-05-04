@@ -30,8 +30,6 @@ func (baikeApi *BaikeApi) CreateBaike(c *gin.Context) {
         "Question":{utils.NotEmpty()},
         "OptionA":{utils.NotEmpty()},
         "OptionB":{utils.NotEmpty()},
-        "OptionC":{utils.NotEmpty()},
-        "OptionD":{utils.NotEmpty()},
         "Answer":{utils.NotEmpty()},
     }
 	if err := utils.Verify(baike, verify); err != nil {
@@ -91,8 +89,6 @@ func (baikeApi *BaikeApi) UpdateBaike(c *gin.Context) {
           "Question":{utils.NotEmpty()},
           "OptionA":{utils.NotEmpty()},
           "OptionB":{utils.NotEmpty()},
-          "OptionC":{utils.NotEmpty()},
-          "OptionD":{utils.NotEmpty()},
           "Answer":{utils.NotEmpty()},
       }
     if err := utils.Verify(baike, verify); err != nil {
