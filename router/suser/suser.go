@@ -13,8 +13,9 @@ func (s *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	userRouterWithoutRecord := Router.Group("user")
 	var userApi = v1.ApiGroupApp.SuserApiGroup.UserApi
 	{
-		userRouterWithoutRecord.POST("createUser", userApi.CreateUser) // 新建Baike
-		userRouterWithoutRecord.PUT("updateUser", userApi.UpdateUser)  // 更新Baike
+		userRouterWithoutRecord.POST("createUser", userApi.CreateUser)    // 新建Baike
+		userRouterWithoutRecord.PUT("updateUser", userApi.UpdateUser)     // 更新Baike
+		userRouterWithoutRecord.DELETE("deleteSUser", userApi.DeleteUser) // 删除Baike
 	}
 	{
 		userRouterWithoutRecord.GET("getSUserList", userApi.GetUserList) // 获取User列表

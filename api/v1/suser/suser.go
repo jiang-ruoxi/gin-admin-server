@@ -66,6 +66,22 @@ func (userApi *UserApi) UpdateUser(c *gin.Context) {
 	}
 }
 
+// DeleteUser 删除数据
+func (userApi *UserApi) DeleteUser(c *gin.Context) {
+	var user suser.User
+	err := c.ShouldBindJSON(&user)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	if err := userService.DeleteUser(user); err != nil {
+		global.GVA_LOG.Error("删除失败!", zap.Error(err))
+		response.FailWithMessage("删除失败", c)
+	} else {
+		response.OkWithMessage("删除成功", c)
+	}
+}
+
 // GetUserList 分页获取User列表
 func (userApi *UserApi) GetUserList(c *gin.Context) {
 	var pageInfo suserReq.UserSearch

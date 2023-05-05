@@ -31,6 +31,14 @@ func (userService *UserService) UpdateUser(user suser.User) (err error) {
 	return err
 }
 
+// DeleteUser 删除Baike记录
+func (userService *UserService) DeleteUser(user suser.User) (err error) {
+	db := global.WebGDB().Model(suser.User{}).Debug()
+	db = db.Delete(&user)
+	err = db.Error
+	return err
+}
+
 // GetUser 根据id获取user记录
 func (userService *UserService) GetUser(id int) (user suser.User, err error) {
 	db := global.WebGDB().Model(suser.User{})
