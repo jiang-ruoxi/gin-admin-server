@@ -1,14 +1,42 @@
 package suser
 
 import (
+	"strconv"
+	"time"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/suser"
 	suserReq "github.com/flipped-aurora/gin-vue-admin/server/model/suser/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/utils"
-	"strconv"
 )
 
 type UserService struct {
+}
+
+// CreateUser 创建Baike记录
+func (userService *UserService) CreateUser(user suser.User) (err error) {
+	db := global.WebGDB().Model(suser.User{}).Debug()
+	now := int(time.Now().UTC().Unix())
+	user.AddTime = strconv.Itoa(now)
+	db = db.Create(&user)
+	err = db.Error
+	return err
+}
+
+// UpdateUser 更新Baike记录
+func (userService *UserService) UpdateUser(user suser.User) (err error) {
+	db := global.WebGDB().Model(suser.User{}).Debug()
+	db = db.Omit("Id", "add_time").Where("id = ?", user.Id).Updates(user)
+	err = db.Error
+	return err
+}
+
+// GetUser 根据id获取user记录
+func (userService *UserService) GetUser(id int) (user suser.User, err error) {
+	db := global.WebGDB().Model(suser.User{})
+	db = db.Where("id = ?", id).First(&user)
+	err = db.Error
+	return
 }
 
 // GetUserInfoList 分页获取User记录
