@@ -1,17 +1,18 @@
 package scategory
 
 import (
+	"time"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/scategory"
 	scategoryReq "github.com/flipped-aurora/gin-vue-admin/server/model/scategory/request"
-	"time"
 )
 
 type CategoryService struct {
 }
 
-//CreateCategory 创建Category记录
+// CreateCategory 创建Category记录
 func (categoryService *CategoryService) CreateCategory(category scategory.Category) (err error) {
 	db := global.WebGDB().Model(scategory.Category{})
 	now := int(time.Now().UTC().Unix())
@@ -21,7 +22,7 @@ func (categoryService *CategoryService) CreateCategory(category scategory.Catego
 	return err
 }
 
-//DeleteCategory 删除Category记录
+// DeleteCategory 删除Category记录
 func (categoryService *CategoryService) DeleteCategory(category scategory.Category) (err error) {
 	db := global.WebGDB().Model(scategory.Category{})
 	db = db.Delete(&category)
@@ -29,7 +30,7 @@ func (categoryService *CategoryService) DeleteCategory(category scategory.Catego
 	return err
 }
 
-//DeleteCategoryByIds 批量删除Category记录
+// DeleteCategoryByIds 批量删除Category记录
 func (categoryService *CategoryService) DeleteCategoryByIds(ids request.IdsReq) (err error) {
 	db := global.WebGDB().Model(scategory.Category{})
 	db = db.Delete(&[]scategory.Category{}, "id in ?", ids.Ids)
@@ -37,7 +38,7 @@ func (categoryService *CategoryService) DeleteCategoryByIds(ids request.IdsReq) 
 	return err
 }
 
-//UpdateCategory 更新Category记录
+// UpdateCategory 更新Category记录
 func (categoryService *CategoryService) UpdateCategory(category scategory.Category) (err error) {
 	db := global.WebGDB().Model(scategory.Category{})
 	err = db.Omit("Id", "add_time").Where("id = ?", category.ID).Updates(category).Error
@@ -45,7 +46,7 @@ func (categoryService *CategoryService) UpdateCategory(category scategory.Catego
 	return err
 }
 
-//GetCategory 根据id获取Category记录
+// GetCategory 根据id获取Category记录
 func (categoryService *CategoryService) GetCategory(id int) (category scategory.Category, err error) {
 	db := global.WebGDB().Model(scategory.Category{})
 	db = db.Where("id = ?", id).First(&category)
@@ -53,7 +54,7 @@ func (categoryService *CategoryService) GetCategory(id int) (category scategory.
 	return
 }
 
-//GetCategoryInfoList 分页获取Category记录
+// GetCategoryInfoList 分页获取Category记录
 func (categoryService *CategoryService) GetCategoryInfoList(info scategoryReq.CategorySearch) (list []scategory.Category, total int64, err error) {
 	limit := info.PageSize
 	offset := info.PageSize * (info.Page - 1)
@@ -75,11 +76,11 @@ func (categoryService *CategoryService) GetCategoryInfoList(info scategoryReq.Ca
 		return
 	}
 
-	err = db.Limit(limit).Offset(offset).Find(&categorys).Error
+	err = db.Order("id desc").Limit(limit).Offset(offset).Find(&categorys).Error
 	return categorys, total, err
 }
 
-//GetCategoryListAll 获取Category所有记录
+// GetCategoryListAll 获取Category所有记录
 func (categoryService *CategoryService) GetCategoryListAll() (list []scategory.Category, err error) {
 	db := global.WebGDB().Model(scategory.Category{})
 	var categoryList []scategory.Category
