@@ -2,21 +2,22 @@ package sbaike
 
 import (
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"time"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/sbaike"
 	sbaikeReq "github.com/flipped-aurora/gin-vue-admin/server/model/sbaike/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/scategory"
 	"gorm.io/gorm"
-	"io/ioutil"
-	"net/http"
-	"time"
 )
 
 type BaikeService struct {
 }
 
-//CreateBaike 创建Baike记录
+// CreateBaike 创建Baike记录
 func (baikeService *BaikeService) CreateBaike(baike sbaike.Baike) (err error) {
 	db := global.WebGDB().Model(sbaike.Baike{})
 	now := int(time.Now().UTC().Unix())
@@ -27,7 +28,7 @@ func (baikeService *BaikeService) CreateBaike(baike sbaike.Baike) (err error) {
 	return err
 }
 
-//DeleteBaike 删除Baike记录
+// DeleteBaike 删除Baike记录
 func (baikeService *BaikeService) DeleteBaike(baike sbaike.Baike) (err error) {
 	db := global.WebGDB().Model(sbaike.Baike{})
 	db = db.Delete(&baike)
@@ -35,7 +36,7 @@ func (baikeService *BaikeService) DeleteBaike(baike sbaike.Baike) (err error) {
 	return err
 }
 
-//DeleteBaikeByIds 批量删除Baike记录
+// DeleteBaikeByIds 批量删除Baike记录
 func (baikeService *BaikeService) DeleteBaikeByIds(ids request.IdsReq) (err error) {
 	db := global.WebGDB().Model(sbaike.Baike{})
 	db = db.Delete(&[]sbaike.Baike{}, "id in ?", ids.Ids)
@@ -43,7 +44,7 @@ func (baikeService *BaikeService) DeleteBaikeByIds(ids request.IdsReq) (err erro
 	return err
 }
 
-//UpdateBaike 更新Baike记录
+// UpdateBaike 更新Baike记录
 func (baikeService *BaikeService) UpdateBaike(baike sbaike.Baike) (err error) {
 	db := global.WebGDB().Model(sbaike.Baike{})
 	err = db.Omit("Id", "add_time").Where("id = ?", baike.ID).Updates(baike).Error
@@ -52,7 +53,7 @@ func (baikeService *BaikeService) UpdateBaike(baike sbaike.Baike) (err error) {
 	return err
 }
 
-//GetBaike 根据id获取Baike记录
+// GetBaike 根据id获取Baike记录
 func (baikeService *BaikeService) GetBaike(id int) (baike sbaike.Baike, err error) {
 	db := global.WebGDB().Model(sbaike.Baike{})
 	db = db.Where("id = ?", id).First(&baike)
@@ -83,7 +84,9 @@ func (baikeService *BaikeService) GetBaikeInfoList(info sbaikeReq.BaikeSearch) (
 	}
 
 	db = baikeService.MakeBaiKeListOrder(db, info.Sort, info.Order)
-	err = db.Limit(limit).Offset(offset).Find(&listData).Error
+	db = db.Order("id desc").Limit(limit).Offset(offset).Find(&listData)
+
+	err = db.Error
 
 	// 创建db
 	db1 := global.WebGDB().Model(scategory.Category{})
@@ -110,7 +113,7 @@ func (baikeService *BaikeService) GetBaikeInfoList(info sbaikeReq.BaikeSearch) (
 	return list, total, err
 }
 
-//MakeBaiKeListOrder 组合排序
+// MakeBaiKeListOrder 组合排序
 func (baikeService *BaikeService) MakeBaiKeListOrder(db *gorm.DB, sort, order string) *gorm.DB {
 	var OrderStr string
 	orderMap := make(map[string]bool)
