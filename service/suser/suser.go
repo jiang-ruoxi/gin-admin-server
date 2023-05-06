@@ -63,7 +63,7 @@ func (userService *UserService) GetUserInfoList(info suserReq.UserSearch) (list 
 		return
 	}
 
-	err = db.Limit(limit).Offset(offset).Find(&users).Error
+	err = db.Order("id desc").Limit(limit).Offset(offset).Find(&users).Error
 
 	for idx, item := range users {
 		if aTime, err := strconv.ParseInt(item.AddTime, 10, 64); err != nil {
