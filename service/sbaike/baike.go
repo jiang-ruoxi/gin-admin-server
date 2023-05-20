@@ -78,6 +78,9 @@ func (baikeService *BaikeService) GetBaikeInfoList(info sbaikeReq.BaikeSearch) (
 	if info.Question != "" {
 		db = db.Where("question LIKE ?", "%"+info.Question+"%")
 	}
+	if info.Analytic != "" {
+		db = db.Where("analytic LIKE ?", "%"+info.Analytic+"%")
+	}
 	err = db.Count(&total).Error
 	if err != nil {
 		return
